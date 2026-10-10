@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "storyframe"
+version = "0.1.0"
+description = "Render word-synchronized English storytelling videos from narration audio and Montreal Forced Aligner TextGrids."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = ["Pillow>=10.0", "numpy>=1.24", "praatio>=6.0", "click>=8.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+storyframe = "storyframe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires ffmpeg/ffprobe (skipped with a reason when unavailable)"]

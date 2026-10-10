@@ -1,0 +1,25 @@
+from .registry import BackgroundSpec, Theme
+
+THEME = Theme(
+    name="minimal_subtitles",
+    description="Small lower-third style subtitles on a plain dark background; no motion by default.",
+    font_candidates=("Inter-SemiBold", "Poppins-Medium", "DejaVuSans-Bold"),
+    font_size_frac=0.058,
+    min_font_size_frac=0.04,
+    fill=(255, 255, 255),
+    accent=(255, 214, 90),
+    outline=(0, 0, 0),
+    outline_frac=0.08,
+    shadow_color=(0, 0, 0, 120),
+    shadow_offset_frac=(0.0, 0.04),
+    shadow_blur_frac=0.03,
+    shadow_extra_frac=0.0,
+    line_spacing=1.15,
+    valign="bottom",
+    box_width_frac=0.9,
+    box_height_frac=0.18,
+    box_center_y_frac=0.86,
+    max_lines=2,
+    default_entrance="none",
+    background=BackgroundSpec(style="solid", top=(16, 16, 18), bottom=(16, 16, 18)),
+)
